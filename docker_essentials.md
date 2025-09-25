@@ -11,7 +11,7 @@ docker pull python
 
 # Pull specific version/tag
 docker pull nginx:1.29
-docker pull python:3.13-alpine
+docker pull python:3.13-slim
 docker pull postgres:17
 
 # Pull from specific registry
@@ -37,7 +37,7 @@ docker run -e POSTGRES_PASSWORD=mypassword postgres
 
 # Run with volume mounting
 docker run -v /host/path:/container/path nginx
-docker run -v $(pwd):/app python:3.13-alpine
+docker run -v $(pwd):/app python:3.13-slim
 
 # Run with name
 docker run --name my-nginx nginx
@@ -50,7 +50,7 @@ Runs containers in detached mode (in the background).
 ```bash
 # Run web server in background
 docker run -d -p 8080:80 nginx
-docker run -d -p 3000:3000 --name my-app python:3.13-alpine
+docker run -d -p 3000:3000 --name my-app python:3.13-slim
 
 # Run database in background
 docker run -d --name my-postgres -e POSTGRES_PASSWORD=secret postgres
